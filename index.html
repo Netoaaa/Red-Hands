@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Red Hands: TON Web Slapping Duel</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      text-align: center; 
+      background: #f0f0f0; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px;
+    }
+    h1 { color: #333; margin-bottom: 8px; }
+    canvas { 
+      border: 2px solid #333; 
+      display: block; 
+      margin: 12px auto;
+      background: linear-gradient(to bottom, #87ceeb 50%, #90ee90 50%);
+    }
+    #context { 
+      font-size: 14px; 
+      color: #555; 
+      max-width: 600px; 
+      margin: 12px auto;
+      padding: 10px;
+      background: #fff;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+    #instructions { 
+      margin: 10px; 
+      font-size: 14px;
+      color: #666;
+    }
+    #score { 
+      display: none;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 10px;
+      color: #333;
+    }
+    .info { 
+      margin-top: 12px; 
+      font-size: 12px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <h1>Red Hands: TON Web Slapping Duel</h1>
+  <div id="context">
+    <p>Inspired by classic IRL hand-slapping games and mobile hits like the Android app, Red Hands is a thrilling reflex duel: Two players face off, one "slaps" virtually, the other dodges. Timing is key—random delays create real-life tension, with penalties for misses. Bet TON tokens to win big, earn NFTs for custom hands, and enjoy rake-fed free plays. Fun, competitive, and surprisingly addictive!</p>
+  </div>
+  <canvas id="gameCanvas" width="400" height="320"></canvas>
+  <p id="instructions">Player 1 (Red Hand): Press <strong>Space</strong> to attack. Player 2 (Blue Hand): Press <strong>Enter</strong> to defend. (Connect wallet for real bets!)</p>
+  <div id="score">Score: P1 - 0, P2 - 0 | Bet: 0.01 TON (Winner takes 0.018 TON, rake funds free plays!)</div>
+  <div class="info">
+    <p>If the canvas stays blank, open devtools console for errors.</p>
+  </div>
+  <script src="https://unpkg.com/@tonconnect/sdk@3"></script>
+  <script src="game.js"></script>
+</body>
+</html>
