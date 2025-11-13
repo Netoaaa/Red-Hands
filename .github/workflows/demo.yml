@@ -1,0 +1,31 @@
+name: Demo capture
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [ 'fix/game-init' ]
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: |
+          npm ci || true
+          npm i -D playwright@1.35.0
+      - name: Install Playwright browsers and deps
+        run: |
+          npx playwright install --with-deps
+      - name: Run demo script
+        run: |
+          node tools/demo.js
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: demo-artifacts
+          path: out/
