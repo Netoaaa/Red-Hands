@@ -56,8 +56,17 @@
     <p>Inspired by classic IRL hand-slapping games and mobile hits like the Android app, Red Hands is a thrilling reflex duel: Two players face off, one "slaps" virtually, the other dodges. Timing is key—random delays create real-life tension, with penalties for misses. Bet TON tokens to win big, earn NFTs for custom hands, and enjoy rake-fed free plays. Fun, competitive, and surprisingly addictive!</p>
   </div>
   <canvas id="gameCanvas" width="400" height="320"></canvas>
-  <p id="instructions">Player 1 (Red Hand): Press <strong>Space</strong> to attack. Player 2 (Blue Hand): Press <strong>Enter</strong> to defend. (Connect wallet for real bets!)</p>
-  <div id="score">Score: P1 - 0, P2 - 0 | Bet: 0.01 TON (Winner takes 0.018 TON, rake funds free plays!)</div>
+  <div id="scoreboard">
+    <div id="roundInfo">Round: <span id="roundNum">1</span> / Best of 3</div>
+    <div id="whoAttacks">Attacker: <span id="attacker">P1</span></div>
+    <div id="scores">P1: <span id="p1score">0</span> — P2: <span id="p2score">0</span></div>
+  </div>
+  <div id="reactions" style="margin-top:8px;">
+    <div>P1 reaction: <span id="p1react">—</span> ms</div>
+    <div>P2 reaction: <span id="p2react">—</span> ms</div>
+    <div id="roundResult" style="font-weight:bold;margin-top:6px"></div>
+  </div>
+  <p id="instructions">Controls — Player 1 (Red): <strong>Space</strong>; Player 2 (Blue): <strong>Enter</strong>. (Connect wallet for real bets!)</p>
   <div class="info">
     <p>If the canvas stays blank, open devtools console for errors.</p>
   </div>
